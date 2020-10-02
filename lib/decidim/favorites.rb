@@ -2,6 +2,7 @@
 
 require_relative "favorites/version"
 require_relative "favorites/engine"
+require_relative "favorites/api"
 
 module Decidim
   module Favorites
