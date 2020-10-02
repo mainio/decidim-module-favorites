@@ -1,0 +1,53 @@
+<div id="<%= dom_id(model, :favorite) %>">
+  <% if current_user %>
+    <% if current_user_favoriting? %>
+      <%= button(t("decidim.favorites.favorite_button.remove_from_favorites"), decidim_favorites.favorite_path(model.to_sgid.to_s, button_params), :delete) do %>
+        <span class="icon-wrap">
+          <span class="heart-icon" aria-hidden="true">
+            <%= render :icon_fill %>
+          </span>
+          <span class="show-for-sr"><%= t("decidim.favorites.favorite_button.remove_from_favorites") %></span>
+          <span class="indicator-wrap" aria-hidden="true">-</span>
+        </span>
+        <% if display_text? %>
+          <span class="button-text link-text"><%= t("decidim.favorites.favorite_button.remove_from_favorites") %></span>
+        <% end %>
+      <% end %>
+    <% else %>
+      <%= button(t("decidim.favorites.favorite_button.add_to_favorites"), decidim_favorites.favorites_path(button_params), :post) do %>
+        <span class="icon-wrap">
+          <span class="heart-icon" aria-hidden="true">
+            <%= render :icon_hollow %>
+          </span>
+          <span class="show-for-sr"><%= t("decidim.favorites.favorite_button.add_to_favorites") %></span>
+          <span class="indicator-wrap" aria-hidden="true">+</span>
+        </span>
+        <% if display_text? %>
+          <span class="button-text link-text"><%= t("decidim.favorites.favorite_button.add_to_favorites") %></span>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% else %>
+    <%= action_authorized_button_to(
+      :favorite,
+      decidim_favorites.favorites_path,
+      resource: model,
+      class: button_classes,
+      params: { favoritable_gid: model.to_sgid.to_s },
+      data: tooltip_data(true),
+      :'aria-haspopup' => true,
+      title: t("decidim.favorites.favorite_button.sign_in_before_favorite"),
+      remote: true) do %>
+      <span class="icon-wrap">
+        <span class="heart-icon" aria-hidden="true">
+          <%= render :icon_hollow %>
+        </span>
+        <span class="show-for-sr"><%= t("decidim.favorites.favorite_button.add_to_favorites") %></span>
+        <span class="indicator-wrap" aria-hidden="true">+</span>
+      </span>
+      <% if display_text? %>
+        <span class="button-text link-text"><%= t("decidim.favorites.favorite_button.add_to_favorites") %></span>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>

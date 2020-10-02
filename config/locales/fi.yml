@@ -1,0 +1,18 @@
+fi:
+  decidim:
+    favorites:
+      favorite_button:
+        add_to_favorites: Lisää suosikiksi
+        remove_from_favorites: Poista suosikeista
+        sign_in_before_favorite: Kirjaudu sisään lisätäksesi suosikiksi
+      favoriting_count:
+        times_added_to_favorites:
+          zero: Kukaan ei ole vielä lisännyt tätä suosikkeihinsa
+          one: Yksi ihminen on lisännyt tämän suosikikseen
+          other: "%{count} ihmistä on lisännyt tämän suosikkeihinsa"
+      favorites:
+        show:
+          title: Suosikit
+          description_html: <p>Täällä näet kaikki omat suosikit, joita olet lisännyt prosessin eri vaiheissa. Sivupalkista voit valita, mitä suosikkeja haluat selata.</p>
+        side_panel:
+          show_navigation: Näytä navigaatio

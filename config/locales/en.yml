@@ -1,0 +1,18 @@
+en:
+  decidim:
+    favorites:
+      favorite_button:
+        add_to_favorites: Add to favourites
+        remove_from_favorites: Remove from favourites
+        sign_in_before_favorite: Sign in to add as favourite
+      favoriting_count:
+        times_added_to_favorites:
+          zero: No one has yet added this to their favourites
+          one: One person has added this to their favourites
+          other: "%{count} people have added this to their favourites"
+      favorites:
+        show:
+          title: Favourites
+          description_html: <p>Here you can see all favourites you have added in different phases of the process. From the side navigation you can choose which favourites you want to see.</p>
+        side_panel:
+          show_navigation: Show navigation

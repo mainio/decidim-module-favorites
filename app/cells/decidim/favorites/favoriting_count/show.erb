@@ -1,0 +1,7 @@
+<div id="<%= dom_id(model, :favoriting_count) %>" class="favorites-icon-wrapper">
+  <%= content_tag(:span, title: t("decidim.favorites.favoriting_count.times_added_to_favorites", count: favoriting_count), data: tooltip_data) do %>
+    <%= icon("heart", class: "icon--before", aria_hidden: true) %>
+    <span aria-hidden="true"><%= favoriting_count %></span>
+    <span class="show-for-sr"><%= t("decidim.favorites.favoriting_count.times_added_to_favorites", count: favoriting_count) %></span>
+  <% end %>
+</div>
