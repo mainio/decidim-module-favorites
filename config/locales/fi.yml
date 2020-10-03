@@ -11,6 +11,10 @@ fi:
           one: Yksi ihminen on lisännyt tämän suosikikseen
           other: "%{count} ihmistä on lisännyt tämän suosikkeihinsa"
       favorites:
+        index:
+          title: Suosikit
+          description_html: <p>Voit lisätä henkilökohtaisia suosikkejasi lisää suosikiksi -painikkeella. Ne tulevat näkyviin tälle sivulle.</p>
+          icon_description: "Käytä tätä ikonia lisätäksesi suosikkeja:"
         show:
           title: Suosikit
           description_html: <p>Täällä näet kaikki omat suosikit, joita olet lisännyt prosessin eri vaiheissa. Sivupalkista voit valita, mitä suosikkeja haluat selata.</p>

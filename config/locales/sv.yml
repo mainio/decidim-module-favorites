@@ -11,6 +11,10 @@ sv:
           one: En person har lagt till detta till sina favoriter
           other: "%{count} personer har lagt till detta till sina favoriter"
       favorites:
+        index:
+          title: Favoriter
+          description_html: <p>Du kan lägga till dina personliga favoriter med knappen lägg till i favoriter. De kommer att visas på den här sidan.</p>
+          icon_description: "Använd den här ikonen för att lägga till favoriter:"
         show:
           title: Favoriter
           description_html: <p>Här kan du se alla favoriter du har lagt till i olika faser av processen. Från sidnavigeringen kan du välja vilka favoriter du vill se.</p>

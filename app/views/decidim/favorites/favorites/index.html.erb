@@ -13,18 +13,18 @@ edit_link(
   <div class="row column">
     <div class="main-container tabbed-container">
       <div class="row collapse main-container--side-panel">
-        <div class="columns medium-12 mediumlarge-4 large-3">
-          <%= render "side_panel" %>
-        </div>
-
-        <div class="columns medium-12 mediumlarge-8 large-9">
+        <div class="columns medium-12">
           <div class="main-container__content">
             <div class="tabs-content vertical">
               <div class="static__content">
                 <h1 class="heading1 page-title">
                   <%= t ".title" %>
                 </h1>
-                <%= t(".subheading_html") %>
+                <%= t(".description_html") %>
+                <div class="aria-hidden">
+                  <p><%= t(".icon_description") %></p>
+                  <p><%== cell("decidim/favorites/favorite_button", nil).example %></p>
+                </div>
               </div>
             </div>
           </div>

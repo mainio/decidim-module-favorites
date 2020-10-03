@@ -14,6 +14,10 @@ module Decidim
         render
       end
 
+      def example
+        render :example
+      end
+
       private
 
       def button(title, path, method)
