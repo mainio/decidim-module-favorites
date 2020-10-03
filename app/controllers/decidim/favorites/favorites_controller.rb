@@ -12,6 +12,8 @@ module Decidim
       before_action :set_types, only: [:index, :show]
       before_action :set_button_options, only: [:create, :destroy]
 
+      skip_before_action :store_current_location
+
       def index
         redirect_to favorite_path(types.keys.first) if types.any?
       end
