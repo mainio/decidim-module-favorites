@@ -1,0 +1,42 @@
+// Include this file in your decidim.scss as follows:
+// @import "decidim/favorites/favorites";
+
+$white: #fff !default;
+$favorite-color: #fa6c96 !default;
+
+.favorite-button{
+  position: relative;
+  top: 4px;
+
+  &.button{
+    padding: 0;
+  }
+
+  .icon-wrap{
+    position: relative;
+    border: 0;
+    padding: 0;
+
+    .heart-icon{
+      color: $favorite-color;
+
+      svg{
+        fill: currentColor;
+      }
+    }
+  }
+
+  .indicator-wrap{
+    position: absolute;
+    bottom: 0;
+    right: -8px;
+    width: 30px;
+    height: 30px;
+    border: 3px solid $favorite-color;
+    line-height: 24px;
+    border-radius: 50%;
+    font-size: 2rem;
+    background: $white;
+    color: $favorite-color;
+  }
+}
