@@ -12,11 +12,6 @@ module Decidim
         root to: "favorites#index"
       end
 
-      initializer "decidim_favorites.assets" do |app|
-        app.config.assets.precompile += %w(decidim_favorites_manifest.css
-                                            decidim/favorites/favorites.scss)
-      end
-
       initializer "decidim_favorites.mount_routes", before: :add_routing_paths do
         Decidim::Core::Engine.routes.append do
           mount Decidim::Favorites::Engine => "/"
