@@ -7,7 +7,7 @@ module Decidim
       isolate_namespace Decidim::Favorites
 
       routes do
-        resources :favorites, except: [:edit, :update]
+        resources :favorites, except: [:edit, :update], param: :type
 
         root to: "favorites#index"
       end

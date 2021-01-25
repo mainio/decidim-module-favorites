@@ -19,7 +19,7 @@ module Decidim
       end
 
       def show
-        @selected_type = params[:id]
+        @selected_type = params[:type]
         @type = types[@selected_type]
         raise ActionController::RoutingError, "Not Found" unless @type
 

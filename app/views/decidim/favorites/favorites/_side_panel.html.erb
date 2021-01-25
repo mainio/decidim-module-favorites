@@ -6,7 +6,7 @@
     <ul id="sub_navigation" class="sub-navigation-content vertical menu" data-toggler=".active">
       <% types.each do |key, type| %>
         <li class="page-item <%= @selected_type == key ? "is-active" : nil %>">
-          <%= link_to type[:name], favorites_path(type: key) %>
+          <%= link_to type[:name], favorite_path(type: key) %>
         </li>
       <% end %>
     </ul>
