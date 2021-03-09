@@ -1,6 +1,6 @@
 # Decidim::Favorites
 
-[![Build Status](https://travis-ci.com/mainio/decidim-module-favorites.svg?branch=master)](https://travis-ci.com/mainio/decidim-module-favorites)
+[![Build Status](https://github.com/mainio/decidim-module-favorites/actions/workflows/ci_favorites.yml/badge.svg)](https://github.com/mainio/decidim-module-favorites/actions)
 [![codecov](https://codecov.io/gh/mainio/decidim-module-favorites/branch/master/graph/badge.svg)](https://codecov.io/gh/mainio/decidim-module-favorites)
 
 The gem has been developed by [Mainio Tech](https://www.mainiotech.fi/).
