@@ -27,7 +27,7 @@ module Decidim
           class: button_classes,
           data: tooltip_data.merge(disable: true),
           title: show_tooltip? ? title : nil,
-          'aria-haspopup' => true,
+          "aria-haspopup" => true,
           method: method,
           remote: true
         ) do
@@ -43,6 +43,7 @@ module Decidim
         }
       end
 
+      # rubocop:disable Style/OptionalBooleanParameter
       def tooltip_data(force = false)
         return {} if !force && !show_tooltip?
 
@@ -53,6 +54,7 @@ module Decidim
           click_open: false
         }
       end
+      # rubocop:enable Style/OptionalBooleanParameter
 
       def display_text?
         !options[:hide_text].presence

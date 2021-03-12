@@ -23,7 +23,7 @@ module Decidim
       end
 
       config.to_prepare do
-        Decidim::User.send(:include, Decidim::Favorites::UserExtensions)
+        Decidim::User.include Decidim::Favorites::UserExtensions
       end
     end
   end
