@@ -7,7 +7,8 @@ require "spec_helper"
 describe "User favorites", type: :system do
   let(:organization) { create(:organization) }
   let(:user) { create(:user, :confirmed, organization: organization) }
-  let!(:dummy_resource) { create(:dummy_resource) }
+  let(:dummy_resource) { create(:dummy_resource) }
+  let(:dummy_component) { create(:dummy_component, organization: organization) }
 
   before do
     switch_to_host(organization.host)
@@ -22,7 +23,6 @@ describe "User favorites", type: :system do
   end
 
   context "when user has favorites" do
-    let(:dummy_component) { create(:dummy_component, organization: organization, name: "Dummy name") }
     let!(:favorite) { create(:favorite, favoritable: dummy_component, user: user) }
 
     before do
@@ -72,7 +72,6 @@ describe "User favorites", type: :system do
       end
     end
     let(:template) { template_class.new }
-    let(:favorite) { create(:favorite, favoritable: dummy_component, user: user) }
 
     before do
       final_html = html_document
@@ -80,6 +79,10 @@ describe "User favorites", type: :system do
         mount Decidim::Favorites::Engine => "/"
         get "test_favorite_cell", to: ->(_) { [200, {}, [final_html]] }
       end
+    end
+
+    after do
+      Rails.application.reload_routes!
     end
 
     it "creates favorite" do
@@ -90,14 +93,6 @@ describe "User favorites", type: :system do
       expect(page).to have_content("One person has added this to their favourites")
       expect(Decidim::Favorites::Favorite.count).to eq(1)
     end
-
-    # it "destroys favorite" do
-    #   favorite
-    #   expect_no_js_errors
-
-    #   click_button
-    #   expect(page).to have_content("No one has yet added this to their favourites")
-    # end
   end
 end
 
@@ -107,10 +102,6 @@ Decidim::Favorites::FavoriteButtonCell.class_eval do
   end
 end
 
-module Decidim
-  module DummyResources
-    class DummyResource
-      include Decidim::Favorites::Favoritable
-    end
-  end
+Decidim::DummyResources::DummyResource.class_eval do
+  include Decidim::Favorites::Favoritable
 end
