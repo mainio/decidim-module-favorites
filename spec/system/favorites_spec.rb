@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
 require "spec_helper"
-# require "cell"
-# require "action_view/railtie"
 
 describe "User favorites", type: :system do
   let(:organization) { create(:organization) }
@@ -66,9 +64,6 @@ describe "User favorites", type: :system do
     end
     let(:template_class) do
       Class.new(ActionView::Base) do
-        def protect_against_forgery?
-          false
-        end
       end
     end
     let(:template) { template_class.new }
