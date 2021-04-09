@@ -10,8 +10,7 @@ base_path = ""
 base_path = "../" if File.basename(__dir__) == "development_app"
 require_relative "#{base_path}lib/decidim/favorites/version"
 
-# DECIDIM_VERSION = Decidim::Favorites::DECIDIM_VERSION
-DECIDIM_VERSION = { github: "decidim/decidim", branch: "release/0.24-stable" }.freeze
+DECIDIM_VERSION = Decidim::Favorites::DECIDIM_VERSION
 
 gem "decidim", DECIDIM_VERSION
 gem "decidim-favorites", path: "."
