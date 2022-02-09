@@ -48,7 +48,6 @@ module Decidim
         return {} if !force && !show_tooltip?
 
         {
-          tooltip: true,
           disable_hover: false,
           keep_on_hover: true,
           click_open: false
