@@ -51,8 +51,8 @@ describe "User favorites", type: :system do
           <html lang="en">
           <head>
             <title>Favorite Button Test</title>
-            #{stylesheet_link_tag "application"}
-            #{javascript_include_tag "application"}
+            #{stylesheet_pack_tag "decidim_core"}
+            #{javascript_pack_tag "decidim_core"}
             #{head_extra}
           </head>
           <body>
