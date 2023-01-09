@@ -20,7 +20,7 @@ module Decidim::Favorites
       it "deletes favorite" do
         expect do
           subject.call
-        end.to change { Decidim::Favorites::Favorite.count }.by(-1)
+        end.to change(Decidim::Favorites::Favorite, :count).by(-1)
       end
     end
   end

@@ -3,7 +3,7 @@
 module Decidim
   module Favorites
     class Favorite < ApplicationRecord
-      include Decidim::DataPortability
+      include Decidim::DownloadYourData
 
       belongs_to :favoritable, foreign_key: "decidim_favoritable_id", foreign_type: "decidim_favoritable_type", polymorphic: true
       belongs_to :user, foreign_key: "decidim_user_id", class_name: "Decidim::User"

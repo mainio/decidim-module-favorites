@@ -28,7 +28,7 @@ describe Decidim::Favorites::FavoritesController, type: :controller do
     it "destroys favorite" do
       expect do
         delete :destroy, format: :js, params: params
-      end.to change { Decidim::Favorites::Favorite.count }.by(-1)
+      end.to change(Decidim::Favorites::Favorite, :count).by(-1)
     end
   end
 end

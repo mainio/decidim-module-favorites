@@ -3,7 +3,7 @@
 module Decidim
   module Favorites
     # A command to add a new favorite to the user.
-    class AddFavorite < Rectify::Command
+    class AddFavorite < Decidim::Command
       # Public: Initializes the command.
       #
       # form - The favoritable form.

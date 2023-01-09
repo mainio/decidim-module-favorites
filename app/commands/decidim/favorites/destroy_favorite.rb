@@ -3,7 +3,7 @@
 module Decidim
   module Favorites
     # A command to destroy an existing favorite from the user.
-    class DestroyFavorite < Rectify::Command
+    class DestroyFavorite < Decidim::Command
       # Public: Initializes the command.
       #
       # form - The favoritable form.

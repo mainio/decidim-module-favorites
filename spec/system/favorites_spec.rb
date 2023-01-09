@@ -62,11 +62,8 @@ describe "User favorites", type: :system do
         HTML
       end
     end
-    let(:template_class) do
-      Class.new(ActionView::Base) do
-      end
-    end
-    let(:template) { template_class.new }
+
+    let(:template) { Class.new(ActionView::Base).new(ActionView::LookupContext.new(ActionController::Base.view_paths), {}, []) }
 
     before do
       final_html = html_document

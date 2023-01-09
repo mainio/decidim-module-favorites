@@ -76,7 +76,7 @@ module Decidim
       attr_reader :types, :button_options
 
       def set_types
-        @types = Decidim::Favorites::Favorite.user_types(current_user).map do |type|
+        @types = Decidim::Favorites::Favorite.user_types(current_user).to_h do |type|
           klass = type.constantize
 
           [
@@ -86,7 +86,7 @@ module Decidim
               name: klass.model_name.human(count: 2)
             }
           ]
-        end.to_h
+        end
       end
 
       def set_button_options

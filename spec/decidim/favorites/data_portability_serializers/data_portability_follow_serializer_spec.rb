@@ -4,7 +4,7 @@ require "spec_helper"
 
 module Decidim::Favorites::DataPortabilitySerializers
   describe DataPortabilityFavoriteSerializer do
-    let(:subject) { described_class.new(favorite) }
+    subject { described_class.new(favorite) }
     let(:favorite) { create(:favorite, favoritable: dummy_component, user: user) }
     let(:dummy_component) { create(:dummy_component, name: "Dummy name", organization: user.organization) }
     let(:user) { create(:user, :confirmed) }
