@@ -1,15 +1,13 @@
 name: "[CI] Favorites"
-on:
-  push:
-    branches:
-      - develop
-      - main
-      - release/*
-  pull_request:
+on: [push, pull_request]
 
 env:
   CI: "true"
   CODECOV: "true"
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.head_ref || github.run_id }}
+  cancel-in-progress: true
 
 jobs:
   main:
@@ -42,12 +40,10 @@ jobs:
         name: Create test app
       - run: mkdir -p ./spec/decidim_dummy_app/tmp/screenshots
         name: Create the screenshots folder
-      - uses: nanasess/setup-chromedriver@v2.1.1
+      - uses: nanasess/setup-chromedriver@v2
       - run: bundle exec rspec
         name: RSpec
       - uses: codecov/codecov-action@v3
-        env:
-          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
       - uses: actions/upload-artifact@v3
         if: always()
         with:
