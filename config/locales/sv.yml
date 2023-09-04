@@ -19,4 +19,4 @@ sv:
           title: Favoriter
           description_html: <p>Här kan du se alla favoriter du har lagt till i olika faser av processen. Från sidnavigeringen kan du välja vilka favoriter du vill se.</p>
         side_panel:
-          show_navigation: Visa navigering
+          nav_label: Undernavigering

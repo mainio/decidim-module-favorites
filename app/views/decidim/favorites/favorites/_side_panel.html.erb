@@ -1,14 +1,12 @@
-<div class="side-panel">
-  <div class="sub-navigation">
-    <button class="sub-navigation-opener hide-for-mediumlarge" data-toggle="sub_navigation">
-      <%= t(".show_navigation") %>
-    </button>
-    <ul id="sub_navigation" class="sub-navigation-content vertical menu" data-toggler=".active">
+<div class="sub-navigation">
+  <nav role="navigation" aria-label="<%= t(".nav_label") %>">
+    <ul class="vertical striped large menu" role="menubar">
       <% types.each do |key, type| %>
-        <li class="page-item <%= @selected_type == key ? "is-active" : nil %>">
-          <%= link_to type[:name], favorite_path(type: key) %>
+        <li role="presentation" class="page-item <%= @selected_type == key ? "is-active" : nil %>">
+          <%= link_to type[:name], favorite_path(type: key), role: "menuitem" %>
         </li>
       <% end %>
     </ul>
-  </div>
+  </nav>
 </div>
+
