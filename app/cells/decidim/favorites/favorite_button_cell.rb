@@ -75,7 +75,7 @@ module Decidim
         extra_classes = ""
         extra_classes += " active" if current_user_favoriting?
 
-        button_class = options[:button_class] || "button clear button--icon"
+        button_class = options[:button_class] || "link action-link"
 
         "#{button_class} favorite-button #{extra_classes}"
       end

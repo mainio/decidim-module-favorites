@@ -19,4 +19,4 @@ fi:
           title: Suosikit
           description_html: <p>Täällä näet kaikki omat suosikit, joita olet lisännyt prosessin eri vaiheissa. Sivupalkista voit valita, mitä suosikkeja haluat selata.</p>
         side_panel:
-          show_navigation: Näytä navigaatio
+          nav_label: Alanavigaatio

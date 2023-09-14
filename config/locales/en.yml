@@ -19,4 +19,4 @@ en:
           title: Favourites
           description_html: <p>Here you can see all favourites you have added in different phases of the process. From the side navigation you can choose which favourites you want to see.</p>
         side_panel:
-          show_navigation: Show navigation
+          nav_label: Sub navigation
