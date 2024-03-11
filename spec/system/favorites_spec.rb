@@ -16,7 +16,7 @@ describe "User favorites", type: :system do
   describe "#index" do
     it "shows dummy message" do
       visit "/favorites"
-      expect(page).to have_content("You can add personal favorites from the add to favorites button.")
+      expect(page).to have_content("You can add personal favourites from the add to favourites button.")
     end
   end
 

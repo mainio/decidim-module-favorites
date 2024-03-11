@@ -13,8 +13,8 @@ en:
       favorites:
         index:
           title: Favourites
-          description_html: <p>You can add personal favorites from the add to favorites button. They will appear on this page.</p>
-          icon_description: "Use this icon to add favorites:"
+          description_html: <p>You can add personal favourites from the add to favourites button. They will appear on this page.</p>
+          icon_description: "Use this icon to add favourites:"
         show:
           title: Favourites
           description_html: <p>Here you can see all favourites you have added in different phases of the process. From the side navigation you can choose which favourites you want to see.</p>
