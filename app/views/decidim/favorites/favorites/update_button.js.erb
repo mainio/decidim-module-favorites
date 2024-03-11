@@ -1,12 +1,12 @@
 (function() {
   var buttonId = "<%= dom_id(@favoritable, :favorite) %>";
-  var favoritingId = "<%= dom_id(@favoritable, :favoriting_count) %>";
+  var favoritingId = "<%= dom_id(@favoritable, :favorites_count) %>";
   var $favoriteResource = $("#" + buttonId);
   var $favoritingCount = $("#" + favoritingId);
 
   $favoriteResource.replaceWith('<%= j((cell "decidim/favorites/favorite_button", @favoritable, button_options).to_s.strip.html_safe) %>')
   $("#" + buttonId).foundation();
 
-  $favoritingCount.replaceWith('<%= j((cell "decidim/favorites/favoriting_count", @favoritable).to_s.strip.html_safe) %>')
+  $favoritingCount.replaceWith('<%= j((cell "decidim/favorites/favorites_count", @favoritable).to_s.strip.html_safe) %>')
   $("#" + favoritingId).foundation();
 })();

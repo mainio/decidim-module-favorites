@@ -5,7 +5,7 @@ sv:
         add_to_favorites: Lägg till i favoriter
         remove_from_favorites: Ta bort från favoriter
         sign_in_before_favorite: Logga in för att lägga till som favorit
-      favoriting_count:
+      favorites_count:
         times_added_to_favorites:
           zero: Ingen har ännu lagt till detta till sina favoriter
           one: En person har lagt till detta till sina favoriter

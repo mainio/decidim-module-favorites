@@ -5,7 +5,7 @@ fi:
         add_to_favorites: Lisää suosikiksi
         remove_from_favorites: Poista suosikeista
         sign_in_before_favorite: Kirjaudu sisään lisätäksesi suosikiksi
-      favoriting_count:
+      favorites_count:
         times_added_to_favorites:
           zero: Kukaan ei ole vielä lisännyt tätä suosikkeihinsa
           one: Yksi ihminen on lisännyt tämän suosikikseen

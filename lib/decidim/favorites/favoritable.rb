@@ -7,7 +7,14 @@ module Decidim
       extend ActiveSupport::Concern
 
       included do
-        has_many :favorites, as: :favoritable, foreign_key: "decidim_favoritable_id", foreign_type: "decidim_favoritable_type", class_name: "Decidim::Favorites::Favorite"
+        has_many(
+          :favorites,
+          as: :favoritable,
+          foreign_key: "decidim_favoritable_id",
+          foreign_type: "decidim_favoritable_type",
+          class_name: "Decidim::Favorites::Favorite",
+          counter_cache: :favorites_count
+        )
         has_many :favoriting, through: :favorites, source: :user
       end
 

@@ -2,17 +2,17 @@
 
 module Decidim
   module Favorites
-    # This cell renders the favoriting count for the given resource. This can be
+    # This cell renders the favorites count for the given resource. This can be
     # used e.g. in the resource cards and it will be automatically updated when
     # the favorite is added or removed by the current user.
-    class FavoritingCountCell < Decidim::ViewModel
+    class FavoritesCountCell < Decidim::ViewModel
       include LayoutHelper
 
-      def favoriting_count
-        if model.respond_to?(:favoriting_count)
-          model.favoriting_count
+      def favorites_count
+        if model.respond_to?(:favorites_count)
+          model.favorites_count
         else
-          model.favoriting.count
+          model.favorites.count
         end
       end
 

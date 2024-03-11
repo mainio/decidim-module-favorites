@@ -39,7 +39,7 @@ describe "User favorites", type: :system do
 
     let(:html_body) do
       Decidim::ViewModel.cell("decidim/favorites/favorite_button", dummy_resource, context: { current_user: user }).call.to_s +
-        Decidim::ViewModel.cell("decidim/favorites/favoriting_count", dummy_resource).call.to_s
+        Decidim::ViewModel.cell("decidim/favorites/favorites_count", dummy_resource).call.to_s
     end
     let(:html_head) { "" }
     let(:html_document) do

@@ -59,7 +59,7 @@ someone has added the record to their favorites (funny name, couldn't think of a
 better one):
 
 ```erb
-<%== cell("decidim/favorites/favoriting_count", model) %>
+<%== cell("decidim/favorites/favorites_count", model) %>
 ```
 
 ## Contributing

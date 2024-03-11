@@ -5,7 +5,7 @@ en:
         add_to_favorites: Add to favourites
         remove_from_favorites: Remove from favourites
         sign_in_before_favorite: Sign in to add as favourite
-      favoriting_count:
+      favorites_count:
         times_added_to_favorites:
           zero: No one has yet added this to their favourites
           one: One person has added this to their favourites

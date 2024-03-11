@@ -63,11 +63,11 @@ module Decidim
         !options[:disable_tooltip].presence
       end
 
-      def favoriting_count
-        if model.respond_to?(:favoriting_count)
-          model.favoriting_count
+      def favorites_count
+        if model.respond_to?(:favorites_count)
+          model.favorites_count
         else
-          model.favoriting.count
+          model.favorites.count
         end
       end
 

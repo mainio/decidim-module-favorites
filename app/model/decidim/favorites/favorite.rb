@@ -5,7 +5,7 @@ module Decidim
     class Favorite < ApplicationRecord
       include Decidim::DownloadYourData
 
-      belongs_to :favoritable, foreign_key: "decidim_favoritable_id", foreign_type: "decidim_favoritable_type", polymorphic: true
+      belongs_to :favoritable, foreign_key: "decidim_favoritable_id", foreign_type: "decidim_favoritable_type", polymorphic: true, counter_cache: true
       belongs_to :user, foreign_key: "decidim_user_id", class_name: "Decidim::User"
 
       validates :user, uniqueness: { scope: [:favoritable] }
