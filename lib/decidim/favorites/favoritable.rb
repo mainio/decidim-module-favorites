@@ -16,15 +16,15 @@ module Decidim
           counter_cache: :favorites_count
         )
         has_many :favoriting, through: :favorites, source: :user
-      end
 
-      class_methods do
-        def user_favorites(user)
+        scope :user_favorites, lambda { |user|
           includes(:favorites).where(
             decidim_favorites_favorites: { decidim_user_id: user.id }
           ).order(favorites_order)
-        end
+        }
+      end
 
+      class_methods do
         def favorites_order
           "decidim_favorites_favorites.created_at DESC, #{table_name}.created_at DESC"
         end
