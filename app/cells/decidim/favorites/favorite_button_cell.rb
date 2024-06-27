@@ -28,7 +28,7 @@ module Decidim
           data: tooltip_data.merge(disable: true),
           title: show_tooltip? ? title : nil,
           "aria-haspopup" => true,
-          method: method,
+          method:,
           remote: true
         ) do
           yield

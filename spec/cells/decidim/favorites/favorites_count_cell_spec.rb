@@ -7,7 +7,7 @@ describe Decidim::Favorites::FavoritesCountCell, type: :cell do
   let(:organization) { create(:organization) }
 
   context "when static page is favoritable" do
-    let(:static_page) { create(:static_page, organization: organization) }
+    let(:static_page) { create(:static_page, organization:) }
 
     it "renders the count" do
       html = cell("decidim/favorites/favorites_count", static_page, hide_text: true).call

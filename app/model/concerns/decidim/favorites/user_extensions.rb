@@ -6,7 +6,7 @@ module Decidim
       extend ActiveSupport::Concern
 
       def favoriting?(favoritable)
-        Decidim::Favorites::Favorite.where(user: self, favoritable: favoritable).any?
+        Decidim::Favorites::Favorite.where(user: self, favoritable:).any?
       end
     end
   end

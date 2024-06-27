@@ -18,7 +18,7 @@ module Decidim
       def favorite
         @favorite ||= Decidim::Favorites::Favorite.find_by(
           user: current_user,
-          favoritable: favoritable
+          favoritable:
         )
       end
     end

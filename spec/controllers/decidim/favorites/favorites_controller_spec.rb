@@ -2,7 +2,7 @@
 
 require "spec_helper"
 
-describe Decidim::Favorites::FavoritesController, type: :controller do
+describe Decidim::Favorites::FavoritesController do
   routes { Decidim::Favorites::Engine.routes }
 
   let(:user) { create(:user, :confirmed) }
@@ -16,18 +16,18 @@ describe Decidim::Favorites::FavoritesController, type: :controller do
 
   describe "POST create" do
     it "creates new favorite" do
-      post :create, format: :js, params: params
+      post(:create, format: :js, params:)
       expect(Decidim::Favorites::Favorite.count).to eq(1)
     end
   end
 
   describe "DELETE destroy" do
-    let!(:favorite) { create(:favorite, favoritable: dummy_component, user: user) }
+    let!(:favorite) { create(:favorite, favoritable: dummy_component, user:) }
     let(:params) { { type: dummy_component.to_sgid.to_s, favorite: { favoritable_gid: dummy_component.to_sgid.to_s } } }
 
     it "destroys favorite" do
       expect do
-        delete :destroy, format: :js, params: params
+        delete :destroy, format: :js, params:
       end.to change(Decidim::Favorites::Favorite, :count).by(-1)
     end
   end

@@ -28,7 +28,7 @@ module Decidim
       end
 
       describe "#favorite" do
-        let!(:favorite) { create(:favorite, favoritable: dummy_component, user: user) }
+        let!(:favorite) { create(:favorite, favoritable: dummy_component, user:) }
 
         it "finds favorite" do
           expect(subject.favorite).to eq(favorite)

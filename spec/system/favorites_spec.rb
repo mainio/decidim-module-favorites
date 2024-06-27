@@ -2,11 +2,11 @@
 
 require "spec_helper"
 
-describe "User favorites", type: :system do
+describe "Favorites" do
   let(:organization) { create(:organization) }
-  let(:user) { create(:user, :confirmed, organization: organization) }
+  let(:user) { create(:user, :confirmed, organization:) }
   let(:dummy_resource) { create(:dummy_resource) }
-  let(:dummy_component) { create(:dummy_component, organization: organization) }
+  let(:dummy_component) { create(:dummy_component, organization:) }
 
   before do
     switch_to_host(organization.host)
@@ -21,7 +21,7 @@ describe "User favorites", type: :system do
   end
 
   context "when user has favorites" do
-    let!(:favorite) { create(:favorite, favoritable: dummy_component, user: user) }
+    let!(:favorite) { create(:favorite, favoritable: dummy_component, user:) }
 
     before do
       allow(Decidim::Component).to receive(:user_favorites).and_return([favorite])
@@ -41,6 +41,7 @@ describe "User favorites", type: :system do
       Decidim::ViewModel.cell("decidim/favorites/favorite_button", dummy_resource, context: { current_user: user }).call.to_s +
         Decidim::ViewModel.cell("decidim/favorites/favorites_count", dummy_resource).call.to_s
     end
+    let(:template) { Class.new(ActionView::Base).new(ActionView::LookupContext.new(ActionController::Base.view_paths), {}, []) }
     let(:html_head) { "" }
     let(:html_document) do
       document_inner = html_body
@@ -63,13 +64,14 @@ describe "User favorites", type: :system do
       end
     end
 
-    let(:template) { Class.new(ActionView::Base).new(ActionView::LookupContext.new(ActionController::Base.view_paths), {}, []) }
-
     before do
       final_html = html_document
+      favicon = ""
+
       Rails.application.routes.draw do
         mount Decidim::Favorites::Engine => "/"
         get "test_favorite_cell", to: ->(_) { [200, {}, [final_html]] }
+        get "/favicon.ico", to: ->(_) { [200, {}, [favicon]] }
       end
     end
 
@@ -81,7 +83,7 @@ describe "User favorites", type: :system do
       visit "/test_favorite_cell"
       expect_no_js_errors
 
-      click_button
+      click_on
       expect(page).to have_content("One person has added this to their favourites")
       expect(Decidim::Favorites::Favorite.count).to eq(1)
     end
@@ -94,6 +96,6 @@ Decidim::Favorites::FavoriteButtonCell.class_eval do
   end
 end
 
-Decidim::DummyResources::DummyResource.class_eval do
+Decidim::Dev::DummyResource.class_eval do
   include Decidim::Favorites::Favoritable
 end

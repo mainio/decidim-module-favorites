@@ -9,11 +9,6 @@ Decidim::Dev.dummy_app_path =
 
 require "decidim/dev/test/base_spec_helper"
 
-# This re-registration is made because of problems with chromedriver v120.
-# Selenium methods are undefined without this change.
-# See: https://github.com/decidim/decidim/pull/12160
-require "#{ENV.fetch("ENGINE_ROOT")}/lib/decidim/favorites/test/rspec_support/capybara"
-
 RSpec.configure do |config|
   # Add the counter cache columns to the records being tested
   config.before(:all) do
@@ -21,7 +16,7 @@ RSpec.configure do |config|
     [
       Decidim::Component,
       Decidim::StaticPage,
-      Decidim::DummyResources::DummyResource
+      Decidim::Dev::DummyResource
     ].each do |klass|
       klass.include Decidim::Favorites::Favoritable
       tables << klass.table_name.to_sym

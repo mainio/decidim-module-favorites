@@ -7,10 +7,10 @@ module Decidim::Favorites
     subject { described_class.new(form, user) }
 
     let(:user) { create(:user, :confirmed) }
-    let(:form) { double(invalid?: invalid, favorite: favorite) }
+    let(:form) { double(invalid?: invalid, favorite:) }
     let(:invalid) { false }
     let(:dummy_component) { create(:dummy_component, name: "Dummy name") }
-    let!(:favorite) { create(:favorite, favoritable: dummy_component, user: user) }
+    let!(:favorite) { create(:favorite, favoritable: dummy_component, user:) }
 
     context "when everything is ok" do
       it "broadcasts ok" do

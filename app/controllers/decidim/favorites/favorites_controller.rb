@@ -82,7 +82,7 @@ module Decidim
           [
             klass.model_name.singular,
             {
-              klass: klass,
+              klass:,
               name: klass.model_name.human(count: 2)
             }
           ]

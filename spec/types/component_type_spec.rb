@@ -11,7 +11,7 @@ module Decidim
       Decidim::Core::ComponentType.implements Decidim::Favorites::Api::FavoritesInterface
       include_context "with a graphql class type"
 
-      let!(:favorite) { create(:favorite, favoritable: model, user: user) }
+      let!(:favorite) { create(:favorite, favoritable: model, user:) }
       let(:model) { create(:dummy_component, organization: user.organization) }
       let(:user) { create(:user, :confirmed) }
 

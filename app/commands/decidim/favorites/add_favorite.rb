@@ -24,7 +24,7 @@ module Decidim
 
         favorite = Decidim::Favorites::Favorite.create!(
           favoritable: form.favoritable,
-          user: user
+          user:
         )
 
         broadcast(:ok, favorite)
