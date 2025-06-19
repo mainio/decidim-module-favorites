@@ -67,6 +67,7 @@ module Decidim
       def permission_class_chain
         [
           ::Decidim::Favorites::Permissions,
+          ::Decidim::Admin::Permissions,
           ::Decidim::Permissions
         ]
       end
