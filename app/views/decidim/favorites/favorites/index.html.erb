@@ -1,9 +1,10 @@
 <% add_decidim_page_title(t(".title")) %>
 <%
 edit_link(
-  decidim_admin.static_pages_path,
-  :read,
-  :static_page
+  decidim_admin.root_path,
+  :update,
+  :organization,
+  organization: current_organization
 )
 %>
 
