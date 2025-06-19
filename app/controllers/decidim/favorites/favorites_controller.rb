@@ -23,7 +23,7 @@ module Decidim
         @type = types[@selected_type]
         raise ActionController::RoutingError, "Not Found" unless @type
 
-        @resources = @type[:klass].user_favorites(current_user)
+        @resources = @type[:klass].user_favorites(current_user).order_favorites
       end
 
       def create

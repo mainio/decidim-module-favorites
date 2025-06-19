@@ -20,13 +20,13 @@ module Decidim
         scope :user_favorites, lambda { |user|
           includes(:favorites).where(
             decidim_favorites_favorites: { decidim_user_id: user.id }
-          ).order(favorites_order)
+          )
         }
       end
 
       class_methods do
-        def favorites_order
-          "decidim_favorites_favorites.created_at DESC, #{table_name}.created_at DESC"
+        def order_favorites
+          order("decidim_favorites_favorites.created_at DESC, #{table_name}.created_at DESC")
         end
       end
     end
