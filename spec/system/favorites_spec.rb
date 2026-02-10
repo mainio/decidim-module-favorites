@@ -23,10 +23,6 @@ describe "User favorites", type: :system do
   context "when user has favorites" do
     let!(:favorite) { create(:favorite, favoritable: dummy_component, user: user) }
 
-    before do
-      allow(Decidim::Component).to receive(:user_favorites).and_return([favorite])
-    end
-
     it "shows favorite" do
       visit "/favorites"
       expect(page.find(".page-item")).to have_content("Component")
