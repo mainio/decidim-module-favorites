@@ -7,9 +7,7 @@ def install_module(path)
     system("bundle exec rake decidim_favorites:install:migrations")
     system("bundle exec rake db:migrate")
 
-    # Temporary fix to overcome the issue with sass-embedded, see:
-    # https://github.com/decidim/decidim/pull/11074
-    system("npm i sass-embedded@~1.62.0")
+    system("npm i '@tarekraafat/autocomplete.js@<=10.2.7'")
   end
 end
 
@@ -20,12 +18,6 @@ def fix_babel_config(path)
     babel_config = "#{Dir.pwd}/babel.config.json"
     File.delete(babel_config) if File.exist?(babel_config)
     FileUtils.cp("#{__dir__}/babel.config.json", Dir.pwd)
-  end
-end
-
-def seed_db(path)
-  Dir.chdir(path) do
-    system("bundle exec rake db:seed")
   end
 end
 
@@ -46,11 +38,11 @@ task :development_app do
       "--path",
       "..",
       "--recreate_db",
+      "--seed_db",
       "--demo"
     )
   end
 
   fix_babel_config("development_app")
   install_module("development_app")
-  seed_db("development_app")
 end
