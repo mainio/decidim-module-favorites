@@ -1,7 +1,9 @@
-<div id="<%= dom_id(model, :favorites_count) %>" class="favorites-icon-wrapper">
-  <%= content_tag(:span, title: t("decidim.favorites.favorites_count.times_added_to_favorites", count: favorites_count), data: tooltip_data) do %>
-    <%= icon("star-line", class: "icon--before", aria_hidden: true) %>
-    <span aria-hidden="true"><%= favorites_count %></span>
-    <span class="show-for-sr"><%= t("decidim.favorites.favorites_count.times_added_to_favorites", count: favorites_count) %></span>
-  <% end %>
-</div>
+<section class="layout-aside__section">
+  <div id="<%= dom_id(model, :favorites_count) %>" class="favorites-icon__wrapper">
+    <%= content_tag(:span, title: t("decidim.favorites.favorites_count.times_added_to_favorites", count: favorites_count), data: tooltip_data, class: "progress-bar__number") do %>
+      <span aria-hidden="true"><%= favorites_count %></span>
+      <div class="progress-bar__units font-normal"><%= t("title", scope: "decidim.favorites.favorites.index") %></div>
+      <span class="sr-only"><%= t("decidim.favorites.favorites_count.times_added_to_favorites", count: favorites_count) %></span>
+    <% end %>
+  </div>
+</section>

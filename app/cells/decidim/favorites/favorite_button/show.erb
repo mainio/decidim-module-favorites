@@ -14,7 +14,7 @@
         <% if display_text? %>
           <span class="link-text"><%= t("decidim.favorites.favorite_button.add_to_favorites") %></span>
         <% else %>
-          <span class="show-for-sr"><%= t("decidim.favorites.favorite_button.add_to_favorites") %></span>
+          <span class="sr-only"><%= t("decidim.favorites.favorite_button.add_to_favorites") %></span>
         <% end %>
         <%= render :icon_hollow %>
       <% end %>
@@ -34,7 +34,7 @@
       <% if display_text? %>
         <span class="link-text"><%= t("decidim.favorites.favorite_button.add_to_favorites") %></span>
       <% else %>
-        <span class="show-for-sr"><%= t("decidim.favorites.favorite_button.add_to_favorites") %></span>
+        <span class="sr-only"><%= t("decidim.favorites.favorite_button.add_to_favorites") %></span>
       <% end %>
       <%= render :icon_hollow %>
     <% end %>
