@@ -5,7 +5,7 @@
         <% if display_text? %>
           <span class="link-text"><%= t("decidim.favorites.favorite_button.remove_from_favorites") %></span>
         <% else %>
-          <span class="show-for-sr"><%= t("decidim.favorites.favorite_button.remove_from_favorites") %></span>
+          <span class="sr-only"><%= t("decidim.favorites.favorite_button.remove_from_favorites") %></span>
         <% end %>
         <%= render :icon_fill %>
       <% end %>

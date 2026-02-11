@@ -85,7 +85,7 @@ module Decidim
       end
 
       def render_screen_reader_title_for(resource)
-        content_tag :span, class: "show-for-sr" do
+        content_tag :span, class: "sr-only" do
           decidim_html_escape(resource_title(resource))
         end
       end

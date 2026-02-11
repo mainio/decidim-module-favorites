@@ -11,7 +11,7 @@ describe Decidim::Favorites::FavoritesCountCell, type: :cell do
 
     it "renders the count" do
       html = cell("decidim/favorites/favorites_count", static_page, hide_text: true).call
-      expect(html).to have_css(".show-for-sr", text: "No one has yet added this to their favourites")
+      expect(html).to have_css(".sr-only", text: "No one has yet added this to their favourites")
     end
   end
 end

@@ -9,6 +9,6 @@ describe Decidim::Favorites::FavoriteButtonCell, type: :cell do
 
   it "has screen reader label" do
     html = cell("decidim/favorites/favorite_button", dummy_resource, hide_text: true).call
-    expect(html).to have_css(".show-for-sr", text: "Add to favourites")
+    expect(html).to have_css(".sr-only", text: "Add to favourites")
   end
 end
