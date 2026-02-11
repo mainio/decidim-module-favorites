@@ -77,7 +77,7 @@ module Decidim
 
         button_class = options[:button_class] || "link action-link"
 
-        "#{button_class} favorite-button #{extra_classes}"
+        "button button__lg button__secondary w-full #{button_class} #{"favorite__button" if display_text?} #{extra_classes}"
       end
 
       def icon_options
