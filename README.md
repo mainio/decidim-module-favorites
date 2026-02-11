@@ -62,6 +62,17 @@ better one):
 <%== cell("decidim/favorites/favorites_count", model) %>
 ```
 
+## *ATTENTION VERSION 0.28*
+
+Favorites button and count has been designed to fit the "show" -views of records. So place "Favorite button" and "Favorite count" one below the other (Order: button -> count) inside "```content_for :aside```" -block.
+
+```erb
+<% content_for :aside do %>
+  <%== cell("decidim/favorites/favorite_button", model...) %>
+  <%== cell("decidim/favorites/favorites_count", model) %>
+<% end %>
+```
+
 ## Contributing
 
 See [Decidim](https://github.com/decidim/decidim).
