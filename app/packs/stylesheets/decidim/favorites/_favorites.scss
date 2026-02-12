@@ -1,12 +1,6 @@
 // Include this file in your decidim.scss as follows:
 // @import "decidim/favorites/favorites";
 
-.action-link{
-  svg{
-    @apply h-6 w-6 fill-white;
-  }
-}
-
 .favorite__button{
   @apply text-white font-semibold flex gap-1 mt-10;
 
