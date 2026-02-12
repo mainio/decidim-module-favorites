@@ -8,7 +8,7 @@
 }
 
 .favorite__button{
-  @apply text-white font-semibold flex gap-1;
+  @apply text-white font-semibold flex gap-1 mt-10;
 
   svg{
     @apply h-6 w-6 fill-white;
@@ -31,8 +31,8 @@
   }
 }
 
-.favorites-icon__wrapper{
-  @apply flex h-40 text-center items-center justify-center;
+.progress-bar__container{
+  @apply mt-4;
 
   svg{
     @apply h-6 w-6;
