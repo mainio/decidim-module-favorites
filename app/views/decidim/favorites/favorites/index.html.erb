@@ -7,27 +7,21 @@ edit_link(
 )
 %>
 
-<div class="wrapper">
-  <div class="row column">
-    <div class="main-container tabbed-container">
-      <div class="row main-container--side-panel">
-        <div class="columns medium-12">
-          <div class="main-container__content">
-            <div class="tabs-content vertical">
-              <div class="static__content">
-                <h1 class="heading1 page-title">
-                  <%= t ".title" %>
-                </h1>
-                <%= t(".description_html") %>
-                <div class="aria-hidden">
-                  <p><%= t(".icon_description") %></p>
-                  <p><%== cell("decidim/favorites/favorite_button", nil).example %></p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+<%= render layout:"layouts/decidim/shared/layout_center" do %>
+  <div class="text-center py-12">
+    <h1 class="h1 decorator inline-block text-left">
+      <%= t("title", scope: "decidim.favorites.favorites.index") %>
+    </h1>
+  </div>
+
+  <div class="page__container">
+    <%= t("description_html", scope: "decidim.favorites.favorites.index") %>
+
+    <div class="editor-content">
+      <div class="aria-hidden mt-4">
+        <p><%= t("icon_description", scope: "decidim.favorites.favorites.index") %></p>
+        <p><%== cell("decidim/favorites/favorite_button", nil).example %></p>
       </div>
     </div>
   </div>
-</div>
+<% end %>

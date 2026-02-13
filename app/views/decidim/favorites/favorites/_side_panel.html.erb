@@ -1,12 +1,10 @@
-<div class="sub-navigation">
-  <nav role="navigation" aria-label="<%= t(".nav_label") %>">
-    <ul class="vertical striped large menu" role="menubar">
-      <% types.each do |key, type| %>
-        <li role="presentation" class="page-item <%= @selected_type == key ? "is-active" : nil %>">
-          <%= link_to type[:name], favorite_path(type: key), role: "menuitem" %>
-        </li>
-      <% end %>
-    </ul>
-  </nav>
-</div>
+<nav role="navigation" aria-label="<%= t(".nav_label") %>">
+  <ul class="vertical-tabs__list" role="menu">
+    <% types.each do |key, type| %>
+      <li role="presentation" class="page-item <%= @selected_type == key ? "is-active" : nil %>">
+        <%= link_to type[:name], favorite_path(type: key), role: "menuitem" %>
+      </li>
+    <% end %>
+  </ul>
+</nav>
 
