@@ -23,6 +23,10 @@ module Decidim
         Cell::ViewModel.view_paths << File.expand_path("#{Decidim::Favorites::Engine.root}/app/views")
       end
 
+      initializer "decidim_favorites.register_icons" do
+        Decidim.icons.register(name: "star-fill", icon: "star-fill", category: "system", description: "", engine: :core)
+      end
+
       config.to_prepare do
         Decidim::User.include Decidim::Favorites::UserExtensions
       end
