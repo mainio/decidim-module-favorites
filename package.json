@@ -1,7 +1,7 @@
 {
-  "name": "decidim-tags",
+  "name": "decidim-favorites",
   "version": "0.1.0",
-  "description": "Tagging functionality for Decidim",
+  "description": "Making favorites functionality for Decidim",
   "main": "index.js",
   "author": "Antti Hukkanen <antti.hukkanen@mainiotech.fi>",
   "license": "AGPL-3.0",

@@ -15,7 +15,7 @@ module Decidim
       private
 
       def favorite_action?
-        return unless permission_action.subject == :favorite
+        return false unless permission_action.subject == :favorite
         return allow! if permission_action.action == :create
 
         favorite = context.fetch(:favorite, nil)

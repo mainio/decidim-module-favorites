@@ -23,13 +23,13 @@ module Decidim
       def button(title, path, method)
         button_to(
           path,
-          params: { favorite: { favoritable_gid: model.to_sgid.to_s } },
-          class: button_classes,
-          data: tooltip_data.merge(disable: true),
-          title: show_tooltip? ? title : nil,
+          :params => { favorite: { favoritable_gid: model.to_sgid.to_s } },
+          :class => button_classes,
+          :data => tooltip_data.merge(disable: true),
+          :title => show_tooltip? ? title : nil,
           "aria-haspopup" => true,
-          method:,
-          remote: true
+          :method => method,
+          :remote => true
         ) do
           yield
         end
