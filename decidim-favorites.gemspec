@@ -7,7 +7,7 @@ require "decidim/favorites/version"
 Gem::Specification.new do |spec|
   spec.name = "decidim-favorites"
   spec.version = Decidim::Favorites.version
-  spec.required_ruby_version = ">= 3.2"
+  spec.required_ruby_version = ">= 3.3"
   spec.authors = ["Antti Hukkanen"]
   spec.email = ["antti.hukkanen@mainiotech.fi"]
 
@@ -26,7 +26,5 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_dependency "decidim-core", Decidim::Favorites.decidim_version
-
-  spec.add_dependency "decidim-dev", Decidim::Favorites.decidim_version
   spec.metadata["rubygems_mfa_required"] = "true"
 end
