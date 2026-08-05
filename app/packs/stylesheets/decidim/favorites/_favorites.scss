@@ -1,34 +1,34 @@
 // Include this file in your decidim.scss as follows:
 // @import "decidim/favorites/favorites";
 
-.favorite__button{
+.favorite__button {
   @apply text-white font-semibold flex gap-1 mt-10;
 
-  svg{
+  svg {
     @apply h-6 w-6 fill-white;
   }
 
-  .icon-wrap{
+  .icon-wrap {
     @apply relative border-none p-0;
 
-    .heart-icon{
+    .heart-icon {
       @apply text-[#fa6c96];
 
-      svg{
+      svg {
         @apply fill-[currentColor];
       }
     }
   }
 
-  .indicator-wrap{
+  .indicator-wrap {
     @apply absolute bottom-0 -right-2 w-[30px] h-[30px] border-2 border-[#fa6c96] rounded-full leading-[24px] text-2xl bg-white text-[#fa6c96];
   }
 }
 
-.progress-bar__container{
+.progress-bar__container {
   @apply mt-4;
 
-  svg{
+  svg {
     @apply h-6 w-6;
   }
 }
