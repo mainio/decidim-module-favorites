@@ -38,7 +38,7 @@ module Decidim
           end
 
           on(:invalid) do
-            render json: { error: I18n.t("create.error", scope: "decidim.favorites") }, status: :unprocessable_entity
+            render json: { error: I18n.t("create.error", scope: "decidim.favorites") }, status: :unprocessable_content
           end
         end
       end
@@ -55,7 +55,7 @@ module Decidim
           end
 
           on(:invalid) do
-            render json: { error: I18n.t("destroy.error", scope: "decidim.favorites") }, status: :unprocessable_entity
+            render json: { error: I18n.t("destroy.error", scope: "decidim.favorites") }, status: :unprocessable_content
           end
         end
       end
