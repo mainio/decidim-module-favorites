@@ -16,7 +16,7 @@ module Decidim
 
       def favorite_action?
         return false unless permission_action.subject == :favorite
-        return allow! if permission_action.action == :create
+        return allow! if [:create, :read].include?(permission_action.action)
 
         favorite = context.fetch(:favorite, nil)
         toggle_allow(favorite&.user == user)
