@@ -15,10 +15,14 @@ module Decidim
       skip_before_action :store_current_location
 
       def index
+        enforce_permission_to :read, :favorite
+
         redirect_to favorite_path(types.keys.first) if types.any?
       end
 
       def show
+        enforce_permission_to :read, :favorite
+
         @selected_type = params[:type]
         @type = types[@selected_type]
         raise ActionController::RoutingError, "Not Found" unless @type
@@ -60,6 +64,10 @@ module Decidim
         end
       end
 
+      private
+
+      attr_reader :types, :button_options
+
       def permission_scope
         :public
       end
@@ -70,10 +78,6 @@ module Decidim
           ::Decidim::Permissions
         ]
       end
-
-      private
-
-      attr_reader :types, :button_options
 
       def set_types
         @types = Decidim::Favorites::Favorite.user_types(current_user).to_h do |type|
